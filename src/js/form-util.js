@@ -128,8 +128,8 @@ export function getProfile (formInputs) {
 
 export function getReasons (reasonInputs) {
   const reasons = reasonInputs
-    .filter(input => input.checked)
-    .map(input => input.value).join(', ')
+        .filter(input => input.checked)
+        .map(input => input.value).join(', ')
   return reasons
 }
 
@@ -201,11 +201,46 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     const creationInstant = new Date()
     const creationDate = creationInstant.toLocaleDateString('fr-CA')
     const creationHour = creationInstant
-      .toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
-      .replace(':', '-')
+          .toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
+          .replace(':', '-')
 
     downloadBlob(pdfBlob, `attestation-${creationDate}_${creationHour}.pdf`)
     showSnackbar(snackbar, 6000)
+  })
+  $('#generate-bis-btn').addEventListener('click', async (event) => {
+    event.preventDefault()
+
+    const reasons = getReasons(reasonInputs)
+    if (!reasons) {
+      reasonFieldset.classList.add('fieldset-error')
+      reasonAlert.classList.remove('hidden')
+      reasonFieldset.scrollIntoView && reasonFieldset.scrollIntoView()
+      return
+    }
+
+    const invalid = validateAriaFields()
+    if (invalid) {
+      return
+    }
+    updateSecureLS(formInputs)
+    const pdfBlob = await generatePdf(getProfile(formInputs), reasons, pdfBase)
+
+    const creationInstant = new Date()
+    const creationDate = creationInstant.toLocaleDateString('fr-CA')
+    const creationHour = creationInstant
+          .toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
+          .replace(':', '-')
+
+    downloadBlob(pdfBlob, `attestation-${creationDate}_${creationHour}.pdf`)
+    showSnackbar(snackbar, 6000)
+  })
+
+  reasonInputs.forEach(radioInput => {
+    radioInput.addEventListener('change', function (event) {
+      const isInError = reasonInputs.every(input => !input.checked)
+      reasonFieldset.classList.toggle('fieldset-error', isInError)
+      reasonAlert.classList.toggle('hidden', !isInError)
+    })
   })
 }
 
