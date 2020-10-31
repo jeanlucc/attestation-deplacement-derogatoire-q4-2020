@@ -6,72 +6,31 @@ import { $, appendTo, createElement } from './dom-utils'
 
 const customsData = {
   who: {
-    jlc: {
-      text: 'Jean-Luc',
+    hugo: {
+      text: 'Hugo',
       effects: [
-        {type: 'field', name: 'firstname', value: 'Jean-Luc'},
-        {type: 'field', name: 'lastname', value: 'Colombier'},
-        {type: 'field', name: 'birthday', value: '16/03/1990'},
-        {type: 'field', name: 'placeofbirth', value: 'Périgueux'},
-      ]
-    },
-    melo: {
-      text: 'Mélo <3',
-      effects: [
-        {type: 'field', name: 'firstname', value: 'Mélody'},
-        {type: 'field', name: 'lastname', value: 'Pautrat'},
-        {type: 'field', name: 'birthday', value: '29/11/1990'},
-        {type: 'field', name: 'placeofbirth', value: 'Paris'},
+        {type: 'field', name: 'firstname', value: 'Hugo'},
+        {type: 'field', name: 'lastname', value: 'Dessaint'},
+        {type: 'field', name: 'birthday', value: '14/12/1990'},
+        {type: 'field', name: 'placeofbirth', value: 'Amiens'},
       ]
     },
   },
   where: {
-    avignon: {
-      text: 'avignon',
-      effects: [
-        {type: 'field', name: 'address', value: '327 chemin du moulin à huile'},
-        {type: 'field', name: 'city', value: 'Saint Saturnin lès Apt'},
-        {type: 'field', name: 'zipcode', value: '84490'},
-      ]
-    },
     home: {
       text: 'maison',
       effects: [
-        {type: 'field', name: 'address', value: '11 rue de Rochechouart'},
+        {type: 'field', name: 'address', value: '94 rue Lafayette'},
         {type: 'field', name: 'city', value: 'Paris'},
-        {type: 'field', name: 'zipcode', value: '75009'},
+        {type: 'field', name: 'zipcode', value: '75010'},
       ]
     },
-    typo: {
-      text: '111 rue',
-      effects: [
-        {type: 'field', name: 'address', value: '111 rue de Rochechouart'},
-        {type: 'field', name: 'city', value: 'Paris'},
-        {type: 'field', name: 'zipcode', value: '75009'},
-      ]
-    },
-    jlc: {
-      text: 'travail J-L',
+    work: {
+      text: 'travail',
       effects: [
         {type: 'field', name: 'address', value: '48 boulevard des batignolles'},
         {type: 'field', name: 'city', value: 'Paris'},
         {type: 'field', name: 'zipcode', value: '75017'},
-      ]
-    },
-    melo: {
-      text: 'travail Mélo <3',
-      effects: [
-        {type: 'field', name: 'address', value: '20 Rue de la Ville-l\'Évêque'},
-        {type: 'field', name: 'city', value: 'Paris'},
-        {type: 'field', name: 'zipcode', value: '75008'},
-      ]
-    },
-    fredCha: {
-      text: 'Fred et Cha',
-      effects: [
-        {type: 'field', name: 'address', value: '67 rue Labat'},
-        {type: 'field', name: 'city', value: 'Paris'},
-        {type: 'field', name: 'zipcode', value: '75018'},
       ]
     },
   },
