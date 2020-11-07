@@ -6,72 +6,31 @@ import { $, appendTo, createElement } from './dom-utils'
 
 const customsData = {
   who: {
-    jlc: {
-      text: 'Jean-Luc',
+    virginie: {
+      text: 'Virginie',
       effects: [
-        {type: 'field', name: 'firstname', value: 'Jean-Luc'},
-        {type: 'field', name: 'lastname', value: 'Colombier'},
-        {type: 'field', name: 'birthday', value: '16/03/1990'},
-        {type: 'field', name: 'placeofbirth', value: 'Périgueux'},
-      ]
-    },
-    melo: {
-      text: 'Mélo <3',
-      effects: [
-        {type: 'field', name: 'firstname', value: 'Mélody'},
-        {type: 'field', name: 'lastname', value: 'Pautrat'},
-        {type: 'field', name: 'birthday', value: '29/11/1990'},
-        {type: 'field', name: 'placeofbirth', value: 'Paris'},
+        {type: 'field', name: 'firstname', value: 'Virginie'},
+        {type: 'field', name: 'lastname', value: 'Dargaud'},
+        {type: 'field', name: 'birthday', value: '21/03/1959'},
+        {type: 'field', name: 'placeofbirth', value: 'Neuilly-sur-Seine'},
       ]
     },
   },
   where: {
     avignon: {
-      text: 'avignon',
+      text: 'Avignon',
       effects: [
         {type: 'field', name: 'address', value: '327 chemin du moulin à huile'},
         {type: 'field', name: 'city', value: 'Saint Saturnin lès Apt'},
         {type: 'field', name: 'zipcode', value: '84490'},
       ]
     },
-    home: {
-      text: 'maison',
+    grau: {
+      text: 'Grau-du-Roi',
       effects: [
-        {type: 'field', name: 'address', value: '11 rue de Rochechouart'},
-        {type: 'field', name: 'city', value: 'Paris'},
-        {type: 'field', name: 'zipcode', value: '75009'},
-      ]
-    },
-    typo: {
-      text: '111 rue',
-      effects: [
-        {type: 'field', name: 'address', value: '111 rue de Rochechouart'},
-        {type: 'field', name: 'city', value: 'Paris'},
-        {type: 'field', name: 'zipcode', value: '75009'},
-      ]
-    },
-    jlc: {
-      text: 'travail J-L',
-      effects: [
-        {type: 'field', name: 'address', value: '48 boulevard des batignolles'},
-        {type: 'field', name: 'city', value: 'Paris'},
-        {type: 'field', name: 'zipcode', value: '75017'},
-      ]
-    },
-    melo: {
-      text: 'travail Mélo <3',
-      effects: [
-        {type: 'field', name: 'address', value: '20 Rue de la Ville-l\'Évêque'},
-        {type: 'field', name: 'city', value: 'Paris'},
-        {type: 'field', name: 'zipcode', value: '75008'},
-      ]
-    },
-    fredCha: {
-      text: 'Fred et Cha',
-      effects: [
-        {type: 'field', name: 'address', value: '67 rue Labat'},
-        {type: 'field', name: 'city', value: 'Paris'},
-        {type: 'field', name: 'zipcode', value: '75018'},
+        {type: 'field', name: 'address', value: '4 Avenue de l\'Hermione'},
+        {type: 'field', name: 'city', value: 'Le Grau-du-Roi'},
+        {type: 'field', name: 'zipcode', value: '30240'},
       ]
     },
   },
